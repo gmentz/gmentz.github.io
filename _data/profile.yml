@@ -21,28 +21,20 @@ linkedin: georgios-mentzelopoulos-aa284411b
 
 short_bio: >-
   <p>
-  
   I am a fifth (and final) year PhD student in Bioengineering at the University of Pennsylvania, advised by 
   <a href="https://vitalelab.med.upenn.edu/dr-flavia-vitale-bio/" target="_blank"> Dr. Flavia Vitale </a>,
   in the <a href="https://cnt.upenn.edu/" target="_blank"> Center for Neuroengineering and Therapeutics </a>.
   My research interests revolve around computational neuroscience and deep learning.
-# Throughout the years, I have obtained extensive experience working with big datasets
-# and developing deep learning frameworks with applications in healthcare.
-  
   </p>
-  
   I am currently developing robust neural decoders for humans implanted with
   stereotactic EEG (sEEG). Currently, neural decoders based on sEEG are patient-specific, which is expensive, 
   cumbersome, and does not scale. To combat this, I am leveraging 
   the versatility of transformers to create unified models that generalize across patients, despite the number and 
   placement of electrodes in their brain. This approach enables combining datasets collected across multiple 
   patients and medical centers, to train more expressive models on orders of magnitude more data. The goal of this work 
-  is to enable high-performance, scalable, and cheap neural decoding from sEEG.
-             
+  is to enable high-performance, scalable, and cheap neural decoding from sEEG.      
   </p>
-  
   <p>
-  
   I am also working on energy efficient neural decoders for microelectrode array based brain computer interfaces (BCIs).
   BCIs have revolutionized the quality of life of paralyzed patients by enabling them to control computers with their
   thoughts, ultimately restoring their digital freedom. While extremely helpful, most BCIs rely on artificial neural
@@ -50,15 +42,10 @@ short_bio: >-
   frustrating. To combat this, we are developing decoders based on spiking neural networks, which are 
   very energy efficient compared to ANNs. The goal of this work is to enable BCI users to utilize their device without
   the frustrating need for frequent recharging.
-  
   </p>
-   <p>
-             
-             
-   Overall, I aspire to use my skills and experience to advance the interface of human and artificial intelligence to
+  <p>    
+  Overall, I aspire to use my skills and experience to advance the interface of human and artificial intelligence to
   ultimately restore the quality of life of those suffering from neurological disorders.
-  
-
   </p>
 # <p>
 #   Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
