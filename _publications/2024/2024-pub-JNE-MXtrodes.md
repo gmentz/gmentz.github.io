@@ -21,7 +21,7 @@ authors:
   - Georgios Mentzelopoulos
   - Guadalupe Fernandez-Nunez
   - Flavia Vitale
-  - John D Medaglia
+  - John D. Medaglia
 links:
   Paper: https://iopscience.iop.org/article/10.1088/1741-2552/ad141e/meta
   # Code: https://github.com/luost26/academic-homepage
