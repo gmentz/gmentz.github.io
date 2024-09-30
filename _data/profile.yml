@@ -21,18 +21,11 @@ linkedin: georgios-mentzelopoulos-aa284411b
 
 short_bio: >-
   <p>
-<<<<<<< HEAD
+
     Georgios (George) is a highly motivated professional interested in solving multidisciplinary challenges. He has experience
     working with big datasets and developing machine/deep learning frameworks in the field of brain-computer interfaces. He aspires
     to use those skills to advance the interface of human and artificial intelligence.
-=======
-    A <a href="https://en.wikipedia.org/wiki/Bicolor_cat" target="_blank">bicolor cat</a> is a cat with white fur combined with fur of some other colour, for example solid black, tabby, or colourpointed.
-  </p>
-  <p>
-    There are various patterns of a bicolour cat. These range from the Van-patterned (colour on the crown of the head 
-    and the tail only) to a solid colour with a throat locket or medallion. Bicolour coats are found in many cat breeds, 
-    as well as being common in domestic longhair and domestic shorthair cats.
->>>>>>> upstream/main
+
   </p>
 # <p>
 #   Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
@@ -43,7 +36,6 @@ portrait_url: /assets/images/photos/gment_pic_2.jpg
 #   Photo by Manja Vitolic on Unsplash (this caption is optional, comment it out to disable).
 
 education:
-<<<<<<< HEAD
 - name: University of Pennsylvania
   logo: /assets/images/badges/upenn_logo.jpg
   position: PhD Bioengineering &#x231B; <br> MSE Robotics &#x1F393;
@@ -53,18 +45,6 @@ education:
   position: BSE Electrical Engineering &#x1F393; <br> BSE Biomedical Engineering &#x1F393;
   date: Sep. 2016 - Jun. 2020
 
-=======
-- name: Massachusetts Institute of Technology
-  logo: /assets/images/badges/MIT_Social_circle.png
-  position: >- 
-    Department of Electrical Engineering and Computer Science <br/>
-    Ph.D. Student
-  date: Sep. 2024 - present
-- name: Peking University
-  logo: /assets/images/badges/PKU_red.png
-  position: B.S. in Computer Science
-  date: Sep. 2019 - Jul. 2021
->>>>>>> upstream/main
 
 experience:
 - name: Neuralink
