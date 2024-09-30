@@ -4,7 +4,7 @@ navbar_name: "Georgios Mentzelopoulos"
 
 positions:
 - logo: /assets/images/badges/upenn_logo.jpg  # Logo is optional
-  name: Bioengineering PhD Candidate @ University of Pennsylvania
+  name: PhD Student @ University of Pennsylvania
 # - name: Position 2 without logo
 
 
@@ -22,9 +22,38 @@ linkedin: georgios-mentzelopoulos-aa284411b
 short_bio: >-
   <p>
 
-    Georgios (George) is a highly motivated professional interested in solving multidisciplinary challenges. He has experience
-    working with big datasets and developing machine/deep learning frameworks in the field of brain-computer interfaces. He aspires
-    to use those skills to advance the interface of human and artificial intelligence.
+  I am a fifth (and final) year Bioengineering PhD student at the University of Pennsylvania, advised by Dr. Flavia
+  Vitale, in the Center for Neuroengineering and Therapeutics. My research interests revolve around computational 
+  neuroscience and deep learning. Throughout the years, I have obtained extensive experience working with big datasets
+  and developing deep learning frameworks with applications in healthcare.
+  
+  </p>
+  
+  I am currently working on developing robust neural decoders for humans implanted with
+  stereotactic EEG (sEEG). Currently, neural decoders based on sEEG are patient-specific. However, 
+  developing patient-specific decoders is expensive, cumbersome, and does not scale because patient-specific data
+  are limited. To combat this, I am leveraging the versatility of transformers to create unified models
+  that generalize across patients, despite the number and placement of sEEG electrodes in 
+  their brain. This unified multi-subject approach enables the accumulation of datasets collected across multiple 
+  patients and medical centers, to train more expressive models on orders of magnitude more data. Such unified models 
+  outperform patient-specific models and can easily be transferred to new patients. The goal of this work is to enable
+  high-performance, scalable, and cheap neural decoding from sEEG.
+  
+  <p>
+  
+  I am also working on developing energy efficient neural decoders for patients implanted with microelectrode array 
+  based brain computer interfaces (BCIs). Currently, BCIs have enabled paralyzed individuals to control their phone and 
+  computer with their thoughts, revolutionizing patient care for those with neurological disorders. While extremely 
+  helpful, those BCIs rely on artificial neural networks (ANNs) that are power hungry, requiring users to recharge their BCIs 
+  every few hours, limiting their practicality and usability. To eliminate the need for frequent charging, 
+  we are developing neural decoding models based on spiking neural networks (SNNs), which are very energy efficient 
+  compared to ANNs, especially when deployed on neuromorphic hardware. The goal of this work is to enable patients 
+  implanted with BCIs to use their device throughout the day without the frustrating need for frequent recharging.
+  
+  </p>
+  
+  Overall, I aspire to use my skills and experience to advance the interface of human and artificial intelligence to
+  ultimately restore the quality of life of those suffering from neurological disorders.
 
   </p>
 # <p>
