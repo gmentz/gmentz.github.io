@@ -22,10 +22,16 @@ linkedin: georgios-mentzelopoulos-aa284411b
 short_bio_text_justify: true
 short_bio: >-
   <p>
+  <strong>TL;DR<strong> 
+  </p>
   I am a fifth (and final) year PhD student in Bioengineering at the University of Pennsylvania, advised by 
   <a href="https://vitalelab.med.upenn.edu/dr-flavia-vitale-bio/" target="_blank"> Dr. Flavia Vitale </a>,
   in the <a href="https://cnt.upenn.edu/" target="_blank"> Center for Neuroengineering and Therapeutics </a>.
-  My research interests revolve around computational neuroscience and deep learning.
+  My research interests revolve around computational neuroscience and deep learning. I am currently developing methods 
+  to advance brain computer interfaces (BCIs).
+  </p>
+  <p>
+  <strong>Projects<strong> 
   </p>
   I am currently developing robust neural decoders for humans implanted with
   stereotactic EEG (sEEG). Currently, neural decoders based on sEEG are patient-specific, which is expensive, 
@@ -36,7 +42,7 @@ short_bio: >-
   is to enable high-performance, scalable, and cheap neural decoding from sEEG.      
   </p>
   <p>
-  I am also working on energy efficient neural decoders for microelectrode array based brain computer interfaces (BCIs).
+  I am also working on energy efficient neural decoders for microelectrode array based brain computer interfaces.
   BCIs have revolutionized the quality of life of paralyzed patients by enabling them to control computers with their
   thoughts, ultimately restoring their digital freedom. While extremely helpful, most BCIs rely on artificial neural
   networks (ANNs) that are power hungry, requiring users to recharge their BCI every few hours, which is impractical and 
