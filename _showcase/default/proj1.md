@@ -57,7 +57,7 @@ date: 2024-01-9 00:01:00 +0800
     introduces a scalable approach towards sEEG data integration for multi-subject model training, paving the way for
     cross-subject generalization for sEEG decoding.  
     </p>
-    <h5 style="margin-top: 30px">Dataset & Challenges</h5> 
+    <h5 style="margin-top: 30px">Dataset</h5> 
     <hr />
     <p style="text-align: justify; font-size: 17px">
     <strong> Dataset. </strong> We collected a dataset of 23 subjects that were implanted with sEEG electrodes as part of
@@ -71,10 +71,6 @@ date: 2024-01-9 00:01:00 +0800
     time task. In each trial, a visual stimulus was presented. After a variable delay, the stimulus changed color. 
     At that time, the participant responded by pressing a button as fast as they could. 
     </p>
-    <p style="; font-size: 17px">
-    <strong> Our goal: </strong> Decode the trial-wise response time of the participants using their 
-    sEEG.
-    </p>
     <!-- Figure with Caption -->
     <!-- Centered Figure with Limited Width -->
     <div style="text-align: center;">
@@ -85,7 +81,12 @@ date: 2024-01-9 00:01:00 +0800
         <strong>(C)</strong> Schematic of the behavioral task that subjects completed.
         </figcaption>
     </div>
-    <p style="margin-top: 20px; margin-bottom: 10px ;font-size: 17px"> <strong>Challenges </strong> </p>
+    <h5 style="margin-top: 30px">Objective & Challenges</h5>
+    <hr />
+    <p style="; font-size: 17px">
+    <strong> Objective. </strong> Decode the trial-wise response time of the participants using their sEEG.
+    </p>
+    <p style="margin-top: 20px; margin-bottom: 10px ;font-size: 17px"> <strong>Challenges. </strong> </p>
     <ul style="; font-size: 17px">
       <li><strong>Variability of electrode number across subjects: </strong> Subjects in our cohort where monitored with
         sEEG electrodes as part of their medical care. Therefore, the number of electrodes that each subject was 
@@ -221,7 +222,7 @@ date: 2024-01-9 00:01:00 +0800
     <h5 style="margin-top: 30px"> Baseline comparisons </h5> 
     <hr />
     <p style="text-align: justify; margin-top: 20px; font-size: 17px">
-    To ensure that our model's decoding performance is worth the computational burden, we compared our models across
+    To ensure that our model's decoding performance is worth the computational burden, we compared our models against
     various baselines. Our proposed architecture outperformed all baseline models when trained on either single subjects
     or across all subjects. 
     <div style="text-align: center; margin-top: 20px">
@@ -238,7 +239,7 @@ date: 2024-01-9 00:01:00 +0800
     <div class="citation">
     <pre><code>@inproceedings{
     mentzelopoulos2024,
-    title={Neural Decoding with sEEG Data: Accounting for Electrode Variability Across Subjects},
+    title={Neural Decoding from stereotactic EEG: accounting for electrode variability across subjects},
     author={Georgios Mentzelopoulos and Evangelos Chatzipantazis and Ashwin Ramayya and Michelle J. Hedlund and Vivek P. Buch and Kostas Daniilidis and Konrad P. Kording and Flavia Vitale},
     booktitle={Thirty-eighth Conference on Neural Information Processing Systems},
     year={2024},
