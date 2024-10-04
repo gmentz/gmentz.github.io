@@ -1,7 +1,7 @@
 ---
 title:          "Alerting attention is sufficient to induce a phase-dependent behavior that can be predicted by frontal EEG"
 date:           2023-05-23 00:01:00 +0800
-selected:       true
+selected:       false
 pub:            "Frontiers in Behavioral Neuroscience"
 pub_date:       "2023"
 # abstract: >-
