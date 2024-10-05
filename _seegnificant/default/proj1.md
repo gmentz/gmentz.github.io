@@ -6,7 +6,7 @@ date: 2024-01-9 00:01:00 +0800
 
 <div class="p-4">
     <!-- <h2 style="text-align: center; margin-bottom: 20px;">  Seeg-nificant </h2> -->
-    <h3 style="text-align: center; margin-bottom: 20px;">Neural Decoding from stereotactic EEG: accounting for electrode variability across subjects</h3>
+    <h3 style="text-align: center; margin-bottom: 20px;">Neural decoding from stereotactic EEG: accounting for electrode variability across subjects</h3>
     <div style="width: 85%; margin: 0 auto; text-align: center; font-weight: bold; margin-bottom: 20px; font-size: 20px;">
         <span style="margin-right: 20px;">Georgios Mentzelopoulos<sup>1</sup></span>
         <span style="margin-right: 20px;">Evangelos Chatzipantazis<sup>1</sup></span>
