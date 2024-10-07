@@ -47,11 +47,10 @@ date: 2024-01-9 00:01:00 +0800
     long-term temporal dependencies between tokens using self-attention in the time dimension. The 3D location of each 
     electrode is then mixed with the tokens, followed by another self-attention in the electrode dimension to extract
     effective spatiotemporal neural representations. Subject-specific heads are then used for downstream decoding tasks.
-    Using this approach, we construct a multi-subject model trained on the combined data from 21 subjects performing 
-    a behavioral task. 
     </p>
     <p style="text-align: justify; margin-bottom: 20px; font-size: 17px">
-    We demonstrate that our model is able to decode the trial-wise response time of the subjects 
+    Using this approach, we construct a multi-subject model trained on the combined data from 21 subjects performing 
+    a behavioral task. We demonstrate that our model is able to decode the trial-wise response time of the subjects 
     during the behavioral task solely from neural data. We also show that the neural representations learned by 
     pretraining our model across individuals can be transferred in a few-shot manner to new subjects. This work 
     introduces a scalable approach towards sEEG data integration for multi-subject model training, paving the way for
@@ -60,171 +59,168 @@ date: 2024-01-9 00:01:00 +0800
     <h5 style="margin-top: 30px">Dataset</h5> 
     <hr />
     <p style="text-align: justify; font-size: 17px">
-    <strong> Dataset. </strong> We collected a dataset of 23 subjects that were implanted with sEEG electrodes as part of
-    their medical care. The subjects in our dataset where mixed in terms of sex (8 male, 13 female) and age (ranging 
-    from 16-57 years old). Each subject was implanted with a variable number of electrodes at district locations in
-    their brain, solely based on clinical needs. Across subjects electrodes span white and grey matter; cortical,
-    subcortical, and deep structures. 
+    <strong> Dataset. </strong> We obtained neural recordings from 21 subjects that were implanted with sEEG electrodes as part of
+    their medical care. Based on clinical needs, each subject was implanted with a variable number of electrodes at district locations in
+    their brain (Fig. 1A, B). Subjects were mixed in terms of sex (8 male, 13 female), age (ranging from 16-57 years old), and ethnic background. 
     </p>
     <p style="; font-size: 17px">
-    <strong> Behavioral Task. </strong> While implated  with sEEG, study participants performed a repetitive, reaction
-    time task. In each trial, a visual stimulus was presented. After a variable delay, the stimulus changed color. 
-    At that time, the participant responded by pressing a button as fast as they could. 
+    <strong> Behavioral Task. </strong> Subjects completed a repetitive, reaction
+    time task while their sEEG was simultaneously recorded (Fig. 1C). In each trial of the task, a visual stimulus was presented. After a variable delay, the stimulus changed color. 
+    At that time, the participant responded by pressing a button as fast as they could.
     </p>
     <!-- Figure with Caption -->
     <!-- Centered Figure with Limited Width -->
     <div style="text-align: center;">
         <img src="{{ 'assets/images/etc/electrode_placement.png' | relative_url }}" alt="Descriptive text for the image" style="max-width: 80%; height: auto;">
         <figcaption style="text-align: center; font-size: 17px; margin-top: 5px;">
-        Figure 1. <strong> Dataset & Behavioral Experiment. </strong> <strong>(A)</strong> Electrode Placement for 4 example subjects 
-        in our cohort, <strong>(B)</strong> All electrodes of all subject in our cohort projected onto a unified brain template,
-        <strong>(C)</strong> Schematic of the behavioral task that subjects completed.
+        Figure 1. <strong> Dataset and behavioral experiment. </strong> <strong>(A)</strong> Electrode placement for 4 example subjects 
+        in our cohort. <strong>(B)</strong> All electrodes of all subject projected onto an MNI brain template.
+        <strong>(C)</strong> Schematic of a trial of the behavioral task.
         </figcaption>
     </div>
-    <h5 style="margin-top: 30px">Objective & Challenges</h5>
+    <h5 style="margin-top: 30px">Objective & challenges</h5>
     <hr />
     <p style="; font-size: 17px">
-    <strong> Objective. </strong> Decode the trial-wise response time of the participants using their sEEG.
+    <strong> Objective. </strong> Decode the trial-wise response time of the subjects using their sEEG.
     </p>
     <p style="margin-top: 20px; margin-bottom: 10px ;font-size: 17px"> <strong>Challenges. </strong> </p>
     <ul style="; font-size: 17px">
-      <li><strong>Variability of electrode number across subjects: </strong> Subjects in our cohort where monitored with
-        sEEG electrodes as part of their medical care. Therefore, the number of electrodes that each subject was 
-        implanted was based on the subject's clinical needs. The number of electrodes varied from tens to hundreds 
-        across subjects. </li>
-      <li><strong>Variability of electrode placement across subjects: </strong> While the brain region in which electrodes are
-        implanted in each subject is known, the identity of the neural population monitored by each electrode, or what
-        stimuli that population responds to is unknown. </li>
-      <li><strong>Limited amount of data for each subject:</strong> Subjects voluntarily 
-        participated in our study while staying in the epilepsy monitoring unit, where they received medical care. 
-        Therefore, the amount of time they can devode is very limited. In our study, each subject performed 
-        &sim; 175 trials of the behavioral task.</li>
-        <li><strong>Variability in behavioral outcomes across subjects:</strong> Each subject's response times across 
-        trials had a unique statistical profile, with the mean and variance of response times varying across subjects. </li>
+      <li><strong>Variability of electrode number/placement across subjects: </strong> Subjects were implanted with
+        sEEG electrodes as part of their medical care. The number and placement of electrodes was determined solely based on
+        clinical needs. Therefore, there is no clear correspondence between the neural activity recorded 
+        between individuals.  
+        </li>
+      <li><strong>Limited amount of per-subject data:</strong> The amount of time that each subject devoted to
+        the behavioral task was limited, based on clinical circumstances. Therefore, the amount of data available to
+        train models from each subject is small. This is a barrier to scaling up models, which require a lot of data
+        to generalize effectively. </li>
+      <li><strong>Variability in behavioral outcomes across subjects:</strong> The response time statistics 
+        (mean and variance of response times across trials) of each subject are unique, posing a significant challenge
+        to integrating data across subjects.</li>
     </ul>
-    <h5 style="margin-top: 30px"> Signal Processing </h5> 
+    <h5 style="margin-top: 30px"> Signal processing </h5> 
     <hr />
     <p style="; font-size: 17px">
         Motivated by the lack of correspondence between the neural activity recorded
-        between subjects, we sought to identify the subset of electrodes across subjects that respond to stimulus 
+        across subjects, we sought to identify  the subset of electrodes that respond to the stimulus 
         color-change during the behavioral task. We identified those electrodes using methods developed by 
-        Paraskevopoulou et al. (2021) using each electrode's high-gamma power. This procedure isolated electrodes that
+        <a href="http://dx.doi.org/10.1016/j.neuroimage.2021.118127" target="_blank"> 
+        Paraskevopoulou et al. (2021)</a> based on each electrode's high-gamma power (narrowband neural activity with
+        frequency content between 70-150 Hz). This procedure isolated electrodes that
         monitor neural populations that are relevant to the task, and therefore are likely to contain information about 
-        the response time of the subject for each trial. The electrical activity of those electrodes was then used for
+        the response time of the subject for each trial (Fig. 2). The electrical activity of those electrodes was then used for
         response time decoding.
     </p>
     <div style="text-align: center;">
         <img src="{{ 'assets/images/etc/responsive_electrodes.png' | relative_url }}" alt="Descriptive text for the image" style="max-width: 60%; height: auto;">
         <figcaption style="text-align: center; font-size: 16px; margin-top: 5px; font-size: 17px">
-        Figure 2. <strong> Neural activation patterns during task for an example subject. </strong> Each dot on the 
-        brain template represents an electrode that either responds to the stimulur color-change (cyan) or not (gray). 
-        Each panel shows the high-gamma timecourse of all trials for 1.5 sec after the stimulus color-change. Black 
+        Figure 2. <strong> Neural activity for color-change responsive electrodes during task for an example subject. </strong> Each dot on the 
+        brain template shows an electrode that either responds to the stimulus color-change (cyan) or not (gray). 
+        Each panel shows the high-gamma timecourse of an electrode, of all trials, for 1.5 sec after the stimulus color-change. Black 
         dots within panels show the subject's response time for each trial.
         </figcaption>
     </div>
-    <h5 style="margin-top: 30px"> Network Architecture </h5> 
+    <h5 style="margin-top: 30px"> Network architecture </h5> 
     <hr />
     <p style="margin-top: 30px; font-size: 17px">
-    Having identified electrodes whose neural activity patterns contain 
-    information about the response times for each trial, our problem now reduces to building a map from the multivariate/
-    timeseries of neural activity of each trial, to the response time of the same trial. 
+    Having identified electrodes whose neural activity contains 
+    information about each trial's response time, our problem reduced to building a map from the multivariate
+    timeseries of neural activity of each trial to the response time of the same trial. 
     </p>
     <p style="margin-top: 30px; font-size: 17px">
-    To build this map, we use the following building blocks:
+    We built this map using the network show in Fig. 3, composed of the following building blocks:
     <ul style="; font-size: 17px">
     <li>
-    <strong> Tokenization: </strong> To tokenize the neural activity, we perform convolutions for each 
-    electrode separately. 
+    <strong> Tokenizer: </strong> We use a CNN that operates on each electrode separately to tokenize the neural 
+    activity of each electrode.
     </li>   
     <li>
-    <strong> Attention in time: </strong> Having tokenized the neural activity, we process the tokens with 
-    self-attention in the time dimension, to capture long term dependencies within the tokens.
+    <strong> Self-attention in time: </strong> Having tokenized the neural activity, we process the tokens with 
+    self-attention <a href="https://doi.org/10.48550/arXiv.1706.03762" target="_blank"> 
+    [Vaswani et al. (2017)] </a> in the time dimension, to capture long term dependencies between timepoints.
     </li>
     <li>
-    <strong> Spatial Positional Encoding: </strong> Using each electrodes MNI coordinates, we mix the tokens with information
-    about their location in the brain.
+    <strong> Spatial positional encoding: </strong> Using MNI coordinates, we add information about each
+    electrodes location in the brain to the tokens.
     </li>
     <li>
-    <strong> Attention in space: </strong> We then process the tokens with another self-attention in the space 
+    <strong> Self-attention in space: </strong> We then process the tokens with another self-attention 
+    <a href="https://doi.org/10.48550/arXiv.1706.03762" target="_blank"> [Vaswani et al. (2017)] </a> in the electrode 
     dimension, to capture long-range dependencies of the neural activity across electrodes.
     </li>
     <li>
-    <strong> Compression: </strong> The latents are then unrolled and projected to a lower dimensional 
-    representation using a multi-layer perceptron.
+    <strong> Compression: </strong> The tokens are then projected to a lower dimensional 
+    representation using an MLP.
     </li>
     <li>
-    <strong> Subject specific regression heads: </strong> The latents are then projected to a single 
-    value, which represents the response time of a given trial, using MLPs that are unique for each subject. A
-    different MLP is assigned for each subject since the response time profile of each subject is unique.
+    <strong> Subject specific regression heads: </strong> The representations are then projected to a single 
+    value, which is the response time estimate of a given trial, using MLPs that are unique for each subject. 
     </li>
     </ul>
     </p>
     <div style="text-align: center;">
-        <img src="{{ 'assets/images/etc/architecture.png' | relative_url }}" alt="Descriptive text for the image" style="max-width: 80%; height: auto;">
-        <figcaption style="text-align: center; font-size: 16px; margin-top: 5px; font-size: 17px">
-        Figure 3. <strong> Outline of our network architecture </strong>. The sEEG signals are converted to vector 
-        embeddings through temporal convolutions and then processed by sequential self-attention operations in the time 
-        and electrode dimensions in an alternating fashion. The latents are compressed and projected through 
-        subject-specific task heads to obtain behavioral predictions.
-        </figcaption>
+        <figure style="display: inline-block; margin: 0;">
+            <img src="{{ 'assets/images/etc/architecture.png' | relative_url }}" alt="Descriptive text for the image" style="max-width: 80%; height: auto;">
+            <figcaption style="font-size: 16px; margin-top: 5px; width: 100%; text-align: center;">
+                Figure 3. <strong>Network architecture</strong>. 
+            </figcaption>
+        </figure>
     </div>
-    <h5 style="margin-top: 30px"> Training Single- and Multi-subject Models </h5> 
+    <h5 style="margin-top: 30px"> Single- and multi-subject model results </h5> 
     <hr />
     <p style="text-align: justify; font-size: 17px">
     <strong> Training single subject models. </strong> To test whether our modeling approach would be able to decode 
-    the trial-wise response time from sEEG data, we began with a within-subject approach, where we trained a separate model for each 
+    the trial-wise response time from sEEG data, we first trained a separate model for each 
     subject. <strong>Across the 21 single-subject models, the average test set $R^2$ was 0.30 &plusmn;  0.05 (mean &plusmn;  sem) </strong>
     </p>
     <p style="text-align: justify; font-size: 17px">
-    <strong> Training a multi-session, multi-subject model. </strong> To investigate whether training on more data, 
-    would improve decoding performance, we trained a unified, multi-subject model on the combined data of all subjects.
-    <strong>Across subjects, the average per-subject test set $R^2$ was 0.39 $\pm$ 0.05 (mean $\pm$ sem). </strong> 
+    <strong> Training a multi-subject model. </strong> To investigate whether training on more data, despite the 
+    heterogeneity, would improve decoding performance, we trained a multi-subject model on the combined data of all subjects.
+    <strong>The average per-subject test set $R^2$ for the multi-subject model was 0.39 $\pm$ 0.05 (mean $\pm$ sem). </strong> 
     The multi-subject training approach boosted decoding performance by $\Delta R^{2}$ = 0.09, on average, compared to
-    training on single subjects.
+    training on single subjects (Fig. 4A).
     </p>
     <p style="text-align: justify; font-size: 17px">
-    <strong> Finetuning the multi-session, multi-subject model to single subjects. </strong> We then tested whether 
+    <strong> Finetuning the multi-subject model to single subjects. </strong> We then tested whether 
     finetuning the multi-subject model to individual subjects would further boost the performance gains.
-    <strong> The multi-seubject model, finetuned to each subject achieved an average per0subject test set
-    $R^2$ score of 0.41 $\pm$ 0.05 </strong>. Finetuning the multi-subject model to individual subjects boosted the\
-    performance gains by $\Delta R^{2}$ = 0.11, on average, compared to single subject models.
+    <strong> The multi-seubject model, finetuned to each subject achieved an average per-subject test set
+    $R^2$ score of 0.41 $\pm$ 0.05 </strong>. Finetuning the multi-subject model to individual subjects boosted the
+    performance gains by $\Delta R^{2}$ = 0.11, on average, compared to single subject models (Fig. 4B).
     </p>
     <div style="text-align: center; margin-top: 30px">
         <img src="{{ 'assets/images/etc/ms_vs_ss.png' | relative_url }}" alt="Descriptive text for the image" style="max-width: 65%; height: auto;">
         <figcaption style="text-align: center; font-size: 16px; margin-top: 5px; max-width: 100%; font-size: 17px">
-        Figure 3. <strong> Comparing decoding performance between the single-subject and multi-subject models for
-        each subject. </strong> <strong> A </strong>. Single-subject vs multi-subject model. <strong> B </strong>. 
-        Single-subject vs finetuned, multi-subject model. 
+        Figure 4. <strong> Comparing decoding performance between </strong> <strong> (A) </strong> single-subject vs multi-subject model and <strong> (B) </strong>
+        single-subject vs finetuned, multi-subject model. 
         </figcaption>
     </div>
     <h5 style="margin-top: 30px"> Transferring multi-subject models to new subjects </h5> 
     <hr />
     <p style="text-align: justify; margin-top: 30px; font-size: 17px">
-    <strong> Transferring the multi-session, multi-subject model to new subjects. </strong> 
-    We were interested in identifying whether the representations learned by pretraining our models on multiple 
-    subjects can efficiently be transferred to new subjects, unseen from the model during training. This is important
-    in any real-world clinical scenario, where only a few number of behavioral trials can be collected from a subject.
-    To test this, we employed a leave-one-out cross validation approach. We trained 21 models, each of which was
+    <strong> Transferring the multi-subject model to new subjects. </strong> 
+    We were interested in identifying whether the multi-subject models can efficiently be transferred to new subjects, 
+    unseen from the model during training. To test this, we employed a leave-one-out cross validation approach. We trained 21 models, each of which was
     trained on the combined data of all subjects but one. The weights of the pretrained models were then used as
-    the basis for finetuning on the data of each left-out participant, unseen from the models during training.
+    the basis for finetuning on the data of each left-out participant.
     <strong> Across subjects, the  models trained on other subjects and finetuned to a new one achieved an average test set
     $R^{2}$ of 0.38 $\pm$ 0.05 (mean $\pm$ sem). </strong> The finetuned single-subject models showed a
-    decoding performance increase $\Delta R^{2}$ = 0.08 compared to the single-subject models trained from scratch.
+    decoding performance increase $\Delta R^{2}$ = 0.08 compared to the single-subject models trained from scratch (Fig. 5A) and 
+    showed decoding performance similar to the multi-subject model (Fig. 5B).
     </p>
     <div style="text-align: center; margin-top: 20px">
         <img src="{{ 'assets/images/etc/ss_ssf.png' | relative_url }}" alt="Descriptive text for the image" style="max-width: 65%; height: auto;">
         <figcaption style="text-align: center; font-size: 16px; margin-top: 5px; max-width: 100%; font-size: 17px">
-        Figure 3. <strong> Comparing decoding performance between </strong> <strong> (A) </strong> Transferred 
+        Figure 5. <strong> Comparing decoding performance between </strong> <strong> (A) </strong> transferred 
         single-subject finetuned models vs  single-subject models trained from scratch, and <strong> (B) </strong> 
-        Transferred single-subject finetuned models vs the multi-session, multi-subject model.
+        transferred single-subject finetuned models vs the multi-subject model.
         </figcaption>
     </div>
     <h5 style="margin-top: 30px"> Baseline comparisons </h5> 
     <hr />
     <p style="text-align: justify; margin-top: 20px; font-size: 17px">
-    To ensure that our model's decoding performance is worth the computational burden, we compared our models against
-    various baselines. Our proposed architecture outperformed all baseline models when trained on either single subjects
-    or across all subjects. 
+    To ensure that our modeling approach is worth the computational complexity, we compared our models against
+    various simple and state-of-the-art baselines. <strong> Our proposed architecture outperformed all baseline models when 
+    trained on either single or multiple subjects. </strong> 
     <div style="text-align: center; margin-top: 20px">
         <img src="{{ 'assets/images/etc/baseline_comparisons.png' | relative_url }}" alt="Descriptive text for the image" style="max-width: 65%; height: auto;">
         <figcaption style="text-align: center; font-size: 16px; margin-top: 5px; max-width: 100%; font-size: 17px">
