@@ -31,6 +31,8 @@ date: 2024-01-9 00:01:00 +0800
         <img src="{{ 'assets/images/badges/github.png' | relative_url }}" alt="GitHub Logo" title="Code coming soon" style="width: 30px; height: auto; vertical-align: middle; margin-right: 5px; margin-left: 40px;cursor: not-allowed;">
         Code
     </p>
+    <p style="text-align: center; margin-bottom: 20px;">Accepted for publication @ 
+    <a href="https://neurips.cc/Conferences/2024" target="_blank"> NeurIPS (2024).</a> <p>
     <h5 style="margin-top: 30px">Abstract</h5> 
     <hr />
     <p style="text-align: justify; margin-bottom: 20px; font-size: 17px">
