@@ -19,17 +19,19 @@ date: 2024-01-9 00:01:00 +0800
     </div>
     <p style="text-align: center; margin-bottom: 20px; font-size: 18px;">
         <sup>1</sup>
-        <img src="{{ 'assets/images/badges/upenn_logo.jpg' | relative_url }}" alt="Penn Logo" style="width: 40px; height: auto; vertical-align: middle;">
+        <img src="{{ 'assets/images/badges/upenn_logo.jpg' | relative_url }}" alt="Penn Logo" style="width: 30px; height: auto; vertical-align: middle;">
         <span style="margin-right: 20px;"> University of Pennsylvania </span>
         <sup>2</sup>
-        <img src="{{ 'assets/images/badges/stanford.png' | relative_url }}" alt="Stanford Logo" style="width: 27px; height: auto; vertical-align: middle;">
+        <img src="{{ 'assets/images/badges/stanford.png' | relative_url }}" alt="Stanford Logo" style="width: 17px; height: auto; vertical-align: middle;">
         <span style="margin-right: 20px;"> Stanford University </span>
     <!-- New line for Arxiv and GitHub logos with "Coming soon" tooltips -->
     <p style="text-align: center; margin-bottom: 20px;">
-        <img src="{{ 'assets/images/badges/arxiv.jpg' | relative_url }}" alt="Arxiv Logo" title="Paper coming soon" style="width: 30px; height: auto; vertical-align: middle; margin-right: 0px; cursor: not-allowed;">
+        <img src="{{ 'assets/images/badges/arxiv.jpg' | relative_url }}" alt="Arxiv Logo" title="Paper coming soon" style="width: 20px; height: auto; vertical-align: top; margin-right: 0px; cursor: not-allowed;">
         Paper
-        <img src="{{ 'assets/images/badges/github.png' | relative_url }}" alt="GitHub Logo" title="Code coming soon" style="width: 30px; height: auto; vertical-align: middle; margin-right: 5px; margin-left: 40px;cursor: not-allowed;">
-        Code
+        <a href="https://github.com/gmentz/seegnificant" title="Link to Codebase" style="text-decoration: none;">
+            <img src="{{ 'assets/images/badges/github.png' | relative_url }}" alt="GitHub Logo" style="width: 23px; height: auto; vertical-align: top; margin-right: 5px; margin-left: 40px;">
+            Code
+        </a>
     </p>
     <p style="text-align: center; margin-bottom: 20px;">Accepted for publication @ 
     <a href="https://neurips.cc/Conferences/2024" target="_blank"> NeurIPS (2024).</a> <p>
@@ -238,7 +240,7 @@ date: 2024-01-9 00:01:00 +0800
     <pre><code>@inproceedings{
     mentzelopoulos2024,
     title={Neural Decoding from stereotactic EEG: accounting for electrode variability across subjects},
-    author={Georgios Mentzelopoulos and Evangelos Chatzipantazis and Ashwin Ramayya and Michelle J. Hedlund and Vivek P. Buch and Kostas Daniilidis and Konrad P. Kording and Flavia Vitale},
+    author={Georgios Mentzelopoulos and Evangelos Chatzipantazis and Ashwin G. Ramayya and Michelle J. Hedlund and Vivek P. Buch and Kostas Daniilidis and Konrad P. Kording and Flavia Vitale},
     booktitle={Thirty-eighth Conference on Neural Information Processing Systems},
     year={2024},
     }</code></pre>
