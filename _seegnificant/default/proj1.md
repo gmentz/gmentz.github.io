@@ -28,7 +28,7 @@ date: 2024-01-9 00:01:00 +0800
     <p style="text-align: center; margin-bottom: 20px;">
         <img src="{{ 'assets/images/badges/arxiv.jpg' | relative_url }}" alt="Arxiv Logo" title="Paper coming soon" style="width: 20px; height: auto; vertical-align: top; margin-right: 0px; cursor: not-allowed;">
         Paper
-        <a href="https://github.com/gmentz/seegnificant" title="Link to Codebase" style="text-decoration: none;">
+        <a href="https://github.com/gmentz/seegnificant"  target="_blank" title="Link to Codebase" style="text-decoration: none;">
             <img src="{{ 'assets/images/badges/github.png' | relative_url }}" alt="GitHub Logo" style="width: 23px; height: auto; vertical-align: top; margin-right: 5px; margin-left: 40px;">
             Code
         </a>
