@@ -22,6 +22,6 @@ authors:
   - Flavia Vitale
 links:
 #  Paper: https://iopscience.iop.org/article/10.1088/1741-2552/ad141e/meta
-  # Code: https://github.com/luost26/academic-homepage
+   Code: https://github.com/gmentz/seegnificant
    Project Page: https://gmentz.github.io/seegnificant
 ---
