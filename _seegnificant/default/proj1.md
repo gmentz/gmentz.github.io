@@ -29,8 +29,10 @@ date: 2024-01-9 00:01:00 +0800
         <!-- <span style="margin-right: 20px;"> Archimedes, Athena RC </span> -->
     <!-- New line for Arxiv and GitHub logos with "Coming soon" tooltips -->
     <p style="text-align: center; margin-bottom: 20px;">
-        <img src="{{ 'assets/images/badges/arxiv.png' | relative_url }}" alt="Arxiv Logo" title="Paper coming soon" style="width: 45px; height: auto; vertical-align: middle; margin-right: 0px; cursor: not-allowed;">
+        <a href="https://openreview.net/pdf?id=LR1nnsD7H0"  target="_blank" title="Link to Open Review" style="text-decoration: none;">
+        <img src="{{ 'assets/images/badges/paper.jpg' | relative_url }}" alt="Arxiv Logo" title="Link to Open Review" style="width: 16px; height: auto; vertical-align: top; margin-right: 5px;">
         Paper
+        </a>
         <a href="https://github.com/gmentz/seegnificant"  target="_blank" title="Link to Codebase" style="text-decoration: none;">
             <img src="{{ 'assets/images/badges/github.png' | relative_url }}" alt="GitHub Logo" style="width: 23px; height: auto; vertical-align: top; margin-right: 5px; margin-left: 40px;">
             Code

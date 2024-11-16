@@ -21,7 +21,7 @@ authors:
   - Konrad Kording
   - Flavia Vitale
 links:
-#  Paper: https://iopscience.iop.org/article/10.1088/1741-2552/ad141e/meta
+   Preprint: https://openreview.net/pdf?id=LR1nnsD7H0
    Code: https://github.com/gmentz/seegnificant
    Project Page: https://gmentz.github.io/seegnificant
 ---
