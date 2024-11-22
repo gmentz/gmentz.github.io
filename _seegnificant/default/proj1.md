@@ -244,6 +244,8 @@ date: 2024-01-9 00:01:00 +0800
     <h5 style="margin-top: 30px"> Citation </h5> 
     <hr />
     <!-- Citation Section -->
+    <div style="border: 1px solid #ddd; padding: 15px; background-color: #f9f9f9; margin: 20px auto; width: 100%; text-align: left; font-family: monospace; line-height: 1.5;">
+    <div class="citation">
     <pre><code>@inproceedings{
     mentzelopoulos2024neural,
     title={Neural decoding from stereotactic EEG: accounting for electrode variability across subjects},
@@ -251,6 +253,8 @@ date: 2024-01-9 00:01:00 +0800
     booktitle={The Thirty-eighth Annual Conference on Neural Information Processing Systems}
     }
     </code></pre>
+    </div>
+    </div>
 <!--/div-->
 
 
