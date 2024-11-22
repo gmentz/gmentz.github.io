@@ -244,17 +244,13 @@ date: 2024-01-9 00:01:00 +0800
     <h5 style="margin-top: 30px"> Citation </h5> 
     <hr />
     <!-- Citation Section -->
-    <div style="border: 1px solid #ddd; padding: 15px; background-color: #f9f9f9; margin: 20px auto; width: 100%; text-align: left; font-family: monospace; line-height: 1.5;">
-    <div class="citation">
     <pre><code>@inproceedings{
-    mentzelopoulos2024,
-    title={Neural Decoding from stereotactic EEG: accounting for electrode variability across subjects},
-    author={Georgios Mentzelopoulos and Evangelos Chatzipantazis and Ashwin G. Ramayya and Michelle J. Hedlund and Vivek P. Buch and Kostas Daniilidis and Konrad P. Kording and Flavia Vitale},
-    booktitle={Thirty-eighth Conference on Neural Information Processing Systems},
-    year={2024},
-    }</code></pre>
-    </div>
-    </div>
+    mentzelopoulos2024neural,
+    title={Neural decoding from stereotactic EEG: accounting for electrode variability across subjects},
+    author={Mentzelopoulos, Georgios and Chatzipantazis, Evangelos and Ramayya, Ashwin G and Hedlund, Michelle and Buch, Vivek and Daniilidis, Kostas and Kording, Konrad and Vitale, Flavia},
+    booktitle={The Thirty-eighth Annual Conference on Neural Information Processing Systems}
+    }
+    </code></pre>
 <!--/div-->
 
 
