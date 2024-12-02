@@ -9,7 +9,7 @@ positions:
 
 
 email: "gment@upenn.edu"
-# cv_link: link-to-your-cv-file
+cv_link: https://drive.google.com/file/d/1ISGvDdnr_50gVs0w2eY9j9GMoMPOJrQW/view?usp=sharing
 gscholar: VLjdOlUAAAAJ
 github: gmentz
 #twitter: gmentzelo
@@ -30,21 +30,28 @@ short_bio: >-
   frameworks with applications in computational neuroscience and brain computer interfaces. My work has been published
   at top-tier AI conferences (NeurIPS) and journals (Science Translational Medicine).
   </p>
+  <h5>Looking for full-time opportunities</h5>
+  <p>
+  I enjoy tackling multidisciplinary challenges and I am looking for full-time opportunities in the AI/ML space
+  starting September 2025.
+  </p>
   <h5>Current Projects</h5> 
   <p>
-  <strong>Multi-patient neural decoding from sEEG.</strong> I am currently developing methods to enable cross patient neural decoding from stereotactic EEG data. Currently, 
-  neural decoding based on sEEG is designed to be patient-specific, due to the challenge of integrating the 
-  heterogenous data across patients, where each is implanted with a variable number of electrodes placed at distinct 
-  locations in their brain. Those single-patient approaches, however, are cumbersome, expensive, and don't scale. 
-  To combat this, I am leveraging the versatility of transformers to create unified models for sEEG decoding that generalize across 
-  patients, despite the number and placement of electrodes in each patient's brain. This approach enables me to combine datasets
-  collected across multiple patients and medical centers, to train more expressive models on orders of magnitude more
-  data. The goal of this work is to enable robust, high-performance neural decoding from sEEG in a scalable way.
+  <strong>Multi-subject neural decoding from sEEG.</strong> I am currently developing methods to enable 
+  cross subject neural decoding from stereotactic EEG data. Currently, 
+  neural decoders based on sEEG are designed to be subject-specific, due to the challenge of integrating inter-subject 
+  data, where each subject gets implanted with a variable number of electrodes placed at distinct 
+  locations in their brain. However, single-subject models don't generalize to new subjects and can't scale due to
+  within subjects data limitations. 
+  Leveraging the versatility of transformers, I am constructing unified models for 
+  sEEG decoding that can be trained across subjects, despite the number and placement of electrodes in each subject's brain.
+  This approach enables me to combine datasets collected across multiple subjects and medical centers, to train more 
+  expressive models on orders of magnitude more data. The goal of this work is to enable robust, high-performance
+  neural decoding from sEEG in a scalable way. 
   <a href="https://gmentz.github.io/seegnificant" target="_blank"> [Project Page]</a>
   </p>
   <p>
-  <strong>Energy efficient neural decoding from microelectrode arrays.</strong> I am developing energy 
-  efficient neural decoding methods for microelectrode array based brain computer interfaces (BCIs).
+  <strong>Energy efficient neural decoding from microelectrode arrays.</strong> 
   BCIs have revolutionized the quality of life of people suffering from neurological disorders by enabling them to 
   control computers with their thoughts, ultimately restoring their digital freedom. While extremely helpful, most BCIs rely on artificial neural
   networks (ANNs) that are power hungry, requiring users to recharge their BCI every few hours, which is impractical and 
@@ -53,11 +60,7 @@ short_bio: >-
   high-performance, energy efficient neural decoding from microelectrode arrays, to enable day long BCI use
   without the frustrating need for frequent recharging.
   </p>
-  <h5>Looking for full-time opportunities</h5>
-  <p>
-  I am looking for full-time opportunities starting September 2025. I enjoy tackling multidisciplinary challenges and 
-  aspire to work in the space of AI/ML with applications in neural interfaces, AR/VR, and/or finance.
-  </p>
+
 # <p>
 #   Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
 # </p>
