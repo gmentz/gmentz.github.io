@@ -37,6 +37,18 @@ date: 2024-01-9 00:01:00 +0800
             <img src="{{ 'assets/images/badges/github.png' | relative_url }}" alt="GitHub Logo" style="width: 23px; height: auto; vertical-align: top; margin-right: 5px; margin-left: 40px;">
             Code
         </a>
+        <a href="https://neurips.cc/media/PosterPDFs/NeurIPS%202024/95591.png?t=1731104034.6156924"  target="_blank" title="Link to Codebase" style="text-decoration: none;">
+            <img src="{{ 'assets/images/badges/poster_icon.png' | relative_url }}" alt="GitHub Logo" style="width: 23px; height: auto; vertical-align: top; margin-right: 5px; margin-left: 40px;">
+            Poster
+        </a>
+        <a href="https://neurips.cc/media/neurips-2024/Slides/95591.pdf"  target="_blank" title="Link to Codebase" style="text-decoration: none;">
+            <img src="{{ 'assets/images/badges/slides_icon.png' | relative_url }}" alt="GitHub Logo" style="width: 25px; height: auto; vertical-align: top; margin-right: 5px; margin-left: 40px;">
+            Slides
+        </a>
+        <a href="https://neurips.cc/virtual/2024/poster/95591"  target="_blank" title="Link to Codebase" style="text-decoration: none;">
+            <img src="{{ 'assets/images/badges/talk_icon.jpg' | relative_url }}" alt="GitHub Logo" style="width: 27px; height: auto; vertical-align: top; margin-right: 5px; margin-left: 40px;">
+            Talk
+        </a>
     </p>
     <p style="text-align: center; margin-bottom: 20px;"> Published at the 38th Conference on Neural Information Processing Systems
     <a href="https://neurips.cc/Conferences/2024" target="_blank"> (NeurIPS 2024).</a> <p>
