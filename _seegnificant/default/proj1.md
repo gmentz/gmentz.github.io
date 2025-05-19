@@ -29,7 +29,7 @@ date: 2024-01-9 00:01:00 +0800
         <!-- <span style="margin-right: 20px;"> Archimedes, Athena RC </span> -->
     <!-- New line for Arxiv and GitHub logos with "Coming soon" tooltips -->
     <p style="text-align: center; margin-bottom: 20px;">
-        <a href="https://openreview.net/pdf?id=LR1nnsD7H0"  target="_blank" title="Link to Open Review" style="text-decoration: none;">
+        <a href="https://proceedings.neurips.cc/paper_files/paper/2024/hash/c473b9c8897f50203fa23570687c6b30-Abstract-Conference.html"  target="_blank" title="Link to Open Review" style="text-decoration: none;">
         <img src="{{ 'assets/images/badges/paper.jpg' | relative_url }}" alt="Arxiv Logo" title="Link to Open Review" style="width: 16px; height: auto; vertical-align: top; margin-right: 5px;">
         Paper
         </a>
